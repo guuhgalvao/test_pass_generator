@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pass Test Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        * {
+            color: #353535;
+        }
+        body {
+            position: relative;
+        }
+        #sidebar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 13vw;
+            height: 100vh;
+        }
+
+        .pass-case {
+            display: none;
+        }
+
+        #pass-box:hover .pass-case {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container p-0" id="capture">
+        <div class="d-flex flex-column">
+            <div class="d-flex" style="height: 90vh;">
+                <div class="d-flex flex-column" style="height: 100%; width: 100%;">
+                    <div class="d-flex" style="height: 60%;">
+                        <div class="d-flex col-4 p-0" style="background: rgba(0, 0, 0, 0.05); padding: 2rem 1.8rem !important;">
+                            <div class="d-block" style="height: 100%; width: 100%; position: relative;">
+                                <div class="d-flex flex-column align-items-center col-12 p-0" style="background: rgba(0, 0, 0, 0.07); height: 45%; position: absolute; top: 0;">
+                                    <div id="card1-pass" class="text-uppercase font-weight-bold" style="font-size: 60px; line-height: 1.3;">3 0 7 5 6</div>
+                                    <div id="card1-tip" class="text-uppercase font-weight-bold" style="font-size: 22px;">2 números corretos,</div>
+                                    <div id="card1-position" class="text-uppercase font-weight-bold" style="font-size: 22px;">mas na posição errada</div>
+                                </div>
+                                <div class="d-flex flex-column align-items-center col-12 p-0" style="background: rgba(0, 0, 0, 0.07); height: 45%; position: absolute; bottom: 0;">
+                                    <div id="card2-pass" class="text-uppercase font-weight-bold" style="font-size: 60px; line-height: 1.3;">3 0 7 5 6</div>
+                                    <div id="card2-tip" class="text-uppercase font-weight-bold" style="font-size: 22px;">2 números corretos,</div>
+                                    <div id="card2-position" class="text-uppercase font-weight-bold" style="font-size: 22px;">mas na posição errada</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex col-4 p-0" style="padding: 2rem 0.8rem !important;">
+                            <div class="d-flex flex-column" style="height: 100%; width: 100%;">
+                                <div class="d-flex justify-content-center">
+                                    <img src="https://www.imagemhost.com.br/images/2020/04/29/keyicon.jpg" class="img-fluid" alt="" style="width: 60%;">
+                                </div>
+                                <div class="d-flex justify-content-center">
+                                    <div class="text-uppercase font-weight-bold" style="font-size: 40px;">Qual é a senha?</div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mt-3" style="height: 40%;" id="pass-box">
+                                    <div class="d-flex justify-content-center align-items-center font-weight-bold" style="height: 64px; width: 64px !important; font-size: 44px; background: #e8b61f;"><span class="text-white pass-case" id="pass-case-1"></span></div>
+                                    <div class="d-flex justify-content-center align-items-center font-weight-bold" style="height: 64px; width: 64px !important; font-size: 44px; background: #e8b61f;"><span class="text-white pass-case" id="pass-case-2"></span></div>
+                                    <div class="d-flex justify-content-center align-items-center font-weight-bold" style="height: 64px; width: 64px !important; font-size: 44px; background: #e8b61f;"><span class="text-white pass-case" id="pass-case-3"></span></div>
+                                    <div class="d-flex justify-content-center align-items-center font-weight-bold" style="height: 64px; width: 64px !important; font-size: 44px; background: #e8b61f;"><span class="text-white pass-case" id="pass-case-4"></span></div>
+                                    <div class="d-flex justify-content-center align-items-center font-weight-bold" style="height: 64px; width: 64px !important; font-size: 44px; background: #e8b61f;"><span class="text-white pass-case" id="pass-case-5"></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex col-4 p-0" style="background: rgba(0, 0, 0, 0.05); padding: 2rem 1.8rem !important;">
+                            <div class="d-block" style="height: 100%; width: 100%; position: relative;">
+                                <div class="d-flex flex-column align-items-center col-12 p-0" style="background: rgba(0, 0, 0, 0.07); height: 45%; position: absolute; top: 0;">
+                                    <div id="card3-pass" class="text-uppercase font-weight-bold" style="font-size: 60px; line-height: 1.3;">3 0 7 5 6</div>
+                                    <div id="card3-tip" class="text-uppercase font-weight-bold" style="font-size: 22px;">2 números corretos,</div>
+                                    <div id="card3-position" class="text-uppercase font-weight-bold" style="font-size: 22px;">mas na posição errada</div>
+                                </div>
+                                <div class="d-flex flex-column align-items-center col-12 p-0" style="background: rgba(0, 0, 0, 0.07); height: 45%; position: absolute; bottom: 0;">
+                                    <div id="card4-pass" class="text-uppercase font-weight-bold" style="font-size: 60px; line-height: 1.3;">3 0 7 5 6</div>
+                                    <div id="card4-tip" class="text-uppercase font-weight-bold" style="font-size: 22px;">2 números corretos,</div>
+                                    <div id="card4-position" class="text-uppercase font-weight-bold" style="font-size: 22px;">mas na posição errada</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex" style="height: 40%;">
+                        <div class="d-flex align-items-center col-4 p-0" style="background: rgba(0, 0, 0, 0.1); padding: 2.7rem 1.8rem !important;">
+                            <div class="d-flex flex-column align-items-center col-12 p-0" style="background: rgba(0, 0, 0, 0.07); height: 85%;">
+                                <div id="card5-pass" class="text-uppercase font-weight-bold" style="font-size: 60px; line-height: 1.3;">3 0 7 5 6</div>
+                                <div id="card5-tip" class="text-uppercase font-weight-bold" style="font-size: 22px;">2 números corretos,</div>
+                                <div id="card5-position" class="text-uppercase font-weight-bold" style="font-size: 22px;">mas na posição errada</div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center col-4 p-0" style="background: rgba(0, 0, 0, 0.05); padding: 2.7rem 1.8rem !important;">
+                            <div class="d-flex flex-column align-items-center col-12 p-0" style="background: rgba(0, 0, 0, 0.07); height: 85%;">
+                                <div id="card6-pass" class="text-uppercase font-weight-bold" style="font-size: 60px; line-height: 1.3;">3 0 7 5 6</div>
+                                <div id="card6-tip" class="text-uppercase font-weight-bold" style="font-size: 22px;">2 números corretos,</div>
+                                <div id="card6-position" class="text-uppercase font-weight-bold" style="font-size: 22px;">mas na posição errada</div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center col-4 p-0" style="background: rgba(0, 0, 0, 0.1); padding: 2.7rem 1.8rem !important;">
+                            <div class="d-flex flex-column align-items-center col-12 p-0" style="background: rgba(0, 0, 0, 0.07); height: 85%;">
+                                <div id="card7-pass" class="text-uppercase font-weight-bold" style="font-size: 60px; line-height: 1.3;">3 0 7 5 6</div>
+                                <div id="card7-tip" class="text-uppercase font-weight-bold" style="font-size: 22px;">2 números corretos,</div>
+                                <div id="card7-position" class="text-uppercase font-weight-bold" style="font-size: 22px;">mas na posição errada</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center align-items-center" style="height: 10vh;">
+                <div class="text-uppercase font-weight-bold" style="font-size: 28px;">A senha e formada por algarismos distintos de 0 a 9.</div>
+            </div>
+        </div>
+    </div>
+    <div id="sidebar">
+        <div class="d-flex flex-column justify-content-center align-items-center" style="height: 100%;">
+            <button type="button" id="btn-update" class="btn btn-warning text-white font-weight-bold mb-5" style="width: 60%;">Atualizar</button>
+            <button type="button" id="btn-download" class="btn btn-warning text-white font-weight-bold" style="width: 60%;">Baixar</button>
+        </div>
+    </div>
+
+    <script>
+        let pass;
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        function getPass() {
+            let pass = [];
+            while (pass.length < 5) {
+                let rand = getRandomInt(0, 9);
+                
+                if (pass.includes(rand)) continue;
+                    
+                pass.push(rand);
+            }
+            return pass;
+        }
+
+        function getAlternativePass(correctPass) {
+            let testPass = [];
+            let correctChars = 0;
+            let incorrectChars = 0;
+            let correctPositions = 0;
+            while (testPass.length < 5) {
+                let rand = getRandomInt(0, 10);
+
+                if (testPass.includes(rand)) continue;
+
+                if (correctPass.includes(rand)) {
+                    if (correctChars === 3) continue;
+
+                    correctChars++;
+
+                    if (correctPass[(correctChars + incorrectChars) - 1] === rand) correctPositions++;
+                    
+                } else {
+                    incorrectChars++;
+                }
+                testPass.push(rand);
+            }
+            return {plain_text: testPass.join(''), test_pass: testPass, correct_chars: correctChars, incorrect_chars: incorrectChars, correct_positions: correctPositions};
+        }
+
+        function loadContent() {
+            pass = getPass();
+
+            document.getElementById('pass-case-1').textContent = pass[0];
+            document.getElementById('pass-case-2').textContent = pass[1];
+            document.getElementById('pass-case-3').textContent = pass[2];
+            document.getElementById('pass-case-4').textContent = pass[3];
+            document.getElementById('pass-case-5').textContent = pass[4];
+
+            let alternatives = [];
+            let checks = [];
+            let auxCorrectChars = 0;
+            let auxCorrectPositions = 0;
+            let auxChars = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            while (alternatives.length < 7) {
+                let alternative = getAlternativePass(pass);
+
+                if (auxCorrectChars !== alternative.correct_chars && checks.includes(alternative.plain_text)) continue;
+                if (auxCorrectPositions < 3 && alternative.correct_positions === 0) continue;
+
+                for (let y in alternative.test_pass) {
+                    let key = auxChars.indexOf(alternative.test_pass[y]);
+                    if (key > -1) {
+                        auxChars.splice(key, 1);
+                    }
+                }
+
+                if (alternatives.length === 4) {
+                    if (auxChars.length > 3) continue;
+                }
+
+                if (alternatives.length === 5) {
+                    if (auxChars.length > 2) continue;
+                }
+
+                if (alternatives.length === 6) {
+                    if (auxChars.length > 0) continue;
+                }
+
+                alternatives.push(alternative);
+                checks.push(alternative.plain_text);
+                auxCorrectChars = alternative.correct_chars;
+                auxCorrectPositions++;
+            }
+
+            for (let x in alternatives) {
+                let card =  'card' + (parseInt(x) + 1);
+                let tipText, positionText;
+
+                if (alternatives[x].correct_chars === 1) {
+                    tipText = '1 NÚMERO CORRETO';
+                } else {
+                    tipText = parseInt(alternatives[x].correct_chars) + ' NÚMEROS CORRETOS';
+                }
+
+                if (alternatives[x].correct_positions === 0) {
+                    tipText += ',';
+                    positionText = 'MAS NA POSIÇÃO ERRADA';
+                } else if (alternatives[x].correct_positions === alternatives[x].correct_chars) {
+                    positionText = 'NA POSIÇÃO CORRETA';
+                } else {
+                    tipText += ',';
+                    positionText = parseInt(alternatives[x].correct_positions) + ' NA POSIÇÃO CORRETA';
+                }
+
+                document.getElementById(card + '-pass').textContent = alternatives[x].test_pass.join(' ');
+                document.getElementById(card + '-tip').textContent = tipText;
+                document.getElementById(card + '-position').textContent = positionText;
+            }
+        }
+        
+        loadContent();
+
+        function saveAs(uri, filename) {
+            var link = document.createElement('a');
+            if (typeof link.download === 'string') {
+                link.href = uri;
+                link.download = filename;
+
+                //Firefox requires the link to be in the body
+                document.body.appendChild(link);
+
+                //simulate click
+                link.click();
+
+                //remove the link when done
+                document.body.removeChild(link);
+            } else {
+                window.open(uri);
+            }
+        }
+
+        document.getElementById('btn-update').addEventListener("click", function(){
+            loadContent();
+        });
+
+        document.getElementById('btn-download').addEventListener("click", function(){
+            html2canvas(document.querySelector("#capture")).then(canvas => {
+                saveAs(canvas.toDataURL(), pass.join('') + '.png');
+            }, {
+                width: document.getElementById('capture').offsetWidth,
+                height: document.getElementById('capture').offsetHeight
+            });
+        });
+    </script>
+</body>
+</html>
