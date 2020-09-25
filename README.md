@@ -5,7 +5,7 @@ Feito para <a href="https://twitter.com/marcoscastro" target="_blank">@marcoscas
 ## Instruções
 
 - Baixe ou clone o repositorio
-- Abra o arquivo 'index.php' no navegador (de preferência Google Chrome)
+- Abra o arquivo 'index.html' no navegador (de preferência Google Chrome)
 - Pronto, teste gerado!
 - Utilize os botões para executar algumas ações
 - Posicione a seta do mouse nos boxes amarelos (abaixo de "Qual é a senha?") para visualizar a senha final/correta
